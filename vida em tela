@@ -1,0 +1,84 @@
+#include <stdio.h>
+
+int main (){
+
+    float domingo, segunda, terça, quarta, quinta, sexta, sabado, soma;
+    int idade, genero;
+
+    printf("Vamos ver quanto tempo da sua vida vocẽ vai perder :)\nPrimeiramente, quantos anos você tem?\nResposta:");
+    
+    if(scanf("%d", &idade) != 1 || idade <= 0){
+        printf("Valor invalido!\n\n");
+        return 0;
+    }
+
+    printf("Agora, me diga se você é mulher ou homem.\nDigite 1 para mulher e 2 para homem\nResposta:");
+    
+    if(scanf("%d", &genero) != 1 || genero < 1 || genero > 2){
+        printf("Valor invalido!\n\n");
+        return 0;
+    }
+
+    printf("Quanto tempo (em horas) de redes sociais você passou durante a semana?\n");
+
+    printf("Domingo:");
+    
+    if(scanf("%f", &domingo) !=1 || domingo <= 0){
+        printf("Valor invalido!\n\n");
+        return 0;
+    }
+
+    printf("Segunda-feira:");
+    
+    if(scanf("%f", &segunda) !=1 || segunda <= 0){
+        printf("Valor invalido!\n\n");
+        return 0;
+    }
+
+    printf("terça-feira:");
+    
+    if(scanf("%f", &terça) !=1 || terça <= 0){
+        printf("Valor invalido!\n\n");
+        return 0;
+    }
+
+    printf("Quanta-feira:");
+    
+    if(scanf("%f", &quarta) !=1 || quarta <= 0){
+        printf("Valor invalido!\n\n");
+        return 0;
+    }
+
+    printf("Quinta-feira:");
+    
+    if(scanf("%f", &quinta) !=1 || quinta <= 0){
+        printf("Valor invalido!\n\n");
+        return 0;
+    }
+
+    printf("Sexta-feira:");
+    
+    if(scanf("%f", &sexta) !=1 || sexta <= 0){
+        printf("Valor invalido!\n\n");
+        return 0;
+    }
+
+    printf("Sábado:");
+
+    if(scanf("%f", &sabado) !=1 || sabado <= 0){
+        printf("Valor invalido!\n\n");
+        return 0;
+    }
+
+    if(genero == 1)
+        soma = (79-idade)*52*(domingo+segunda+terça+quarta+quinta+sexta+sabado)/24/365;
+    else
+        soma = (73-idade)*52*(domingo+segunda+terça+quarta+quinta+sexta+sabado)/24/365;
+
+    if(genero == 1)
+        printf("Você perderá, aproximadamente, %.2f anos da sua vida :)\nIsso se você viver até 79 anos(expectavida média de uma mulher brasileira em 2025).\n\n", soma);
+    else 
+        printf("Você perderá, aproximadamente, %.2f anos da sua vida :)\nIsso se você viver até 73 anos(expectavida média de um homem brasileiro em 2025).\n\n", soma);
+
+    return 0;
+}
